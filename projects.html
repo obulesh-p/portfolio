@@ -2,134 +2,140 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>My Projects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
 
-<style>
+    <style>
+        :root {
+            --bg-black: #0a0a0a;
+            --card-dark: #151515;
+            --accent-red: #ff3b3b;
+            --soft-red: #ff6b6b;
+            --text-white: #f5f5f5;
+            --text-gray: #9a9a9a;
+            --border-dark: #2a2a2a;
+        }
 
-:root{
-    --bg-black:#0a0a0a;
-    --card-dark:#151515;
-    --accent-red:#ff3b3b;
-    --soft-red:#ff6b6b;
-    --text-white:#f5f5f5;
-    --text-gray:#9a9a9a;
-    --border-dark:#2a2a2a;
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            text-align: center;
+            background: var(--bg-black);
+            color: var(--text-white);
+            background-image: url(https://static.vecteezy.com/system/resources/previews/044/792/171/non_2x/a-red-and-black-background-with-a-bright-light-gradient-art-design-idea-template-free-vector.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed; 
+        }
 
-body{
-    font-family: Arial, sans-serif;
-    margin:0;
-    padding:40px;
-    text-align:center;
-    background:var(--bg-black);
-    color:var(--text-white);
-    background-image: url(https://static.vecteezy.com/system/resources/previews/044/792/171/non_2x/a-red-and-black-background-with-a-bright-light-gradient-art-design-idea-template-free-vector.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
+        h2 {
+            font-family: "Times New Roman", Times, serif;
+            font-size: clamp(32px, 8vw, 45px); 
+            font-weight: normal;
+            color: var(--text-white);
+            border-bottom: 3px solid var(--accent-red);
+            display: inline-block;
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+        }
 
+        
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 30px;
+            max-width: 900px;
+            margin: auto;
+        }
 
-h2{
-    font-family:"Times New Roman", Times, serif;
-    font-size:45px;
-    font-weight:normal;
-    color:var(--text-white);
-    border-bottom:3px solid var(--accent-red);
-    display:inline-block;
-    padding-bottom:10px;
-    margin-bottom:40px;
-}
+        .project-box {
+            background: var(--card-dark);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border-dark);
+            transition: 0.3s;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(255, 59, 59, 0.2);
+        }
 
+        .project-box:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-red);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+        }
 
-.projects{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    grid-template-rows:repeat(2,1fr);
-    gap:30px;
-    max-width:900px;
-    margin:auto;
-}
+        h3 {
+            font-family: "Times New Roman", Times, serif;
+            margin-bottom: 10px;
+            color: var(--accent-red);
+        }
 
+        p {
+            line-height: 1.7;
+            color: var(--text-gray);
+            font-size: 15px;
+        }
 
-.project-box{
-    background:var(--card-dark);
-    padding:25px;
-    border-radius:12px;
-    border:1px solid var(--border-dark);
-    transition:0.3s;
-     min-height:180px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    box-shadow:0 0 20px rgba(255,59,59,0.3);
-}
+        footer {
+            background: rgba(17, 17, 17, 0.9);
+            color: var(--text-gray);
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 60px;
+            border-top: 1px solid var(--border-dark);
+        }
 
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 15px;
+            }
+            
+            .projects {
+                grid-template-columns: 1fr; 
+                gap: 20px;
+            }
 
-.project-box:hover{
-    transform:translateY(-8px);
-    border-color:var(--accent-red);
-    box-shadow:0 15px 30px rgba(0,0,0,0.7);
-    
-}
-
-
-h3{
-    font-family:"Times New Roman", Times, serif;
-    margin-bottom:10px;
-    color:var(--accent-red);
-}
-
-
-p{
-    line-height:1.7;
-    color:var(--text-gray);
-    font-size:15px;
-}
-
-
-footer{
-    background:#111;
-    color:var(--text-gray);
-    padding:15px;
-    text-align:center;
-    border-radius:10px;
-    margin-top:60px;
-    border-top:1px solid var(--border-dark);
-}
-
-</style>
+            .project-box {
+                min-height: auto; 
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<h2>My Projects</h2>
+    <h2>My Projects</h2>
 
-<div class="projects">
+    <div class="projects">
+        <div class="project-box">
+            <h3>Automated Personal Finance Tracker</h3>
+            <p>A Java application that allows users to input their daily expenses and income. The program saves this data to a .txt or .csv file.</p>
+        </div>
 
-<div class="project-box">
-<h3>Automated Personal Finance Tracker</h3>
-<p>A Java application that allows users to input their daily expenses and income. The program saves this data to a .txt or .csv file.</p>
-</div>
+        <div class="project-box">
+            <h3>Interactive Portfolio Website</h3>
+            <p>A multi-page website built with HTML and CSS that highlights your skills, CV, and academic projects.</p>
+        </div>
 
-<div class="project-box">
-<h3>Interactive Portfolio Website</h3>
-<p>A multi-page website built with HTML and CSS that highlights your skills, CV, and academic projects.</p>
-</div>
+        <div class="project-box">
+            <h3>Decision-Support Chatbot (CLI Version)</h3>
+            <p>A command-line interface chatbot that uses conditional logic and switch statements to guide a user through financial decisions.</p>
+        </div>
 
-<div class="project-box">
-<h3>Decision-Support Chatbot (CLI Version)</h3>
-<p>A command-line interface chatbot that uses conditional logic and switch statements to guide a user through financial decisions.</p>
-</div>
+        <div class="project-box">
+            <h3>Student Task & Productivity Manager</h3>
+            <p>A specialized To-Do app designed for students to track assignments, exam dates, and meetings efficiently.</p>
+        </div>
+    </div>
 
-<div class="project-box">
-<h3>Student Task & Productivity Manager</h3>
-<p>A specialized To-Do app designed for students to track assignments, exam dates, and meetings efficiently.</p>
-</div>
-
-</div>
-
-<footer>© 2026 User Interface Design</footer>
+    <footer>© 2026 User Interface Design</footer>
 
 </body>
 </html>
