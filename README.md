@@ -54,4 +54,3 @@ portfolio/
 │   └── script.js         # Navigation or Animation Logic
 └── README.md             # Project documentation
 
-'''
