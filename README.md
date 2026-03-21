@@ -32,7 +32,23 @@ open index.html
 
 📁 Folder Structure
 portfolio/
-│── index.html
-│── style.css
-│── script.js
-│── assets/
+├── index.html            # Main Landing Page (Home)
+├── about.html            # Your Bio and Academic Background
+├── projects.html         # Detailed Project Showcase
+├── contact.html          # Contact Form and Social Links
+├── weblog.html           # Your Tech Blog Page
+├── assets/               # All Media and Design Files
+│   ├── images/           
+│   │   ├── portfolio.jpeg  # Your Profile Picture
+│   │   ├── projects.png    # Project Thumbnails
+│   │   └── blog.png        # Blog Thumbnails
+│   └── docs/             
+│       └── resume.pdf      # Your Professional Resume
+├── css/                  # Stylesheets
+│   ├── style.css         # Main Site Styles
+│   ├── resume.css        # Specific styles for Resume/About
+│   └── mobile.css        # Responsive Design Overrides
+├── js/                   # Interactivity
+│   └── script.js         # Navigation or Animation Logic
+└── README.md             # Project documentation
+
